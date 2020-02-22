@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[2]:
+# In[20]:
 
 
 import numpy as np
@@ -18,7 +18,7 @@ from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
 
 def CreateDataset(file):
-    df = pd.read_csv(file)
+    df = pd.read_table(file)
     df.columns = ["x_coord", "y_coord", "month", "day",
                   "ffmc", "dmc", "dc", "isi", "temp",
                   "rh", "wind", "rain", "area"]
@@ -69,7 +69,7 @@ def train_model(X, y):
 
 def main():
 
-    X, y = CreateDataset("data.csv")
+    X, y = CreateDataset("data.txt")
 
     model = train_model(X, y)
     data1 = "6,5,9,6,92.5,121.1,674.4,8.6,25.1,27,4,0"
